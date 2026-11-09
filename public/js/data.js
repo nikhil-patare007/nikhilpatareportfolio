@@ -1,369 +1,204 @@
-/*
-  Content for the section panels. Edit this file in VS Code to update the site.
-  Each section: { label, title, intro, items: [{ title, subtitle, status, text, tags, link }] }
-  Items marked "Starter" are placeholders: replace them with your own entries.
-*/
-window.SITE_DATA = {
+const SECTIONS_DATA = {
   projects: {
-    label: "Projects",
-    title: "Things I've built",
-    intro:
-      "Websites, web apps, Android and iOS applications, and AI-powered solutions. Two freelance projects delivered so far.",
+    label: "Projects & Freelance",
+    title: "Client & Freelance Work",
+    intro: "Production-ready platforms and bespoke software systems built for real-world operations.",
+    colorClass: "panel--blue",
     items: [
       {
-        title: "Detaillo",
-        subtitle: "Auto Detailing Studio Billing Web App",
-        status: "Delivered · Freelance",
-        text:
-          "A billing web app for an auto detailing studio. Staff sign in, raise GST invoices and quotations, manage the rate card, track paid, part-paid and unpaid bills, and export date-range reports as Excel files.",
-        tags: ["Web App", "GST Billing", "Reports & Excel", "Firebase"],
-        featureList: [
-          "Secure staff sign in",
-          "GST invoices and quotations",
-          "Rate card management",
-          "Paid / part-paid / unpaid tracking",
-          "Date-range reports to Excel",
+        id: "dr-chothe",
+        title: "Dr. Chothe Children Hospital",
+        subtitle: "Pediatric Clinic Management & EMR System",
+        status: "Delivered · Live",
+        desc: "A lightweight, production-grade pediatric clinic management web app designed for daily clinical workflows—featuring instant OPD registration, live patient queue handling, digital prescriptions, growth tracking, immunization schedules, and daily ledger accounting.",
+        features: [
+          "OPD registration & automated UHID generation",
+          "Live OPD queue management & fast triage workflow",
+          "Custom Rx prescription printing & one-click WhatsApp sharing",
+          "Vaccination due tracking & automated guardian reminder messages",
+          "WHO-standard pediatric growth monitoring (Weight, Height, Head Circ.)",
+          "Admissions, NICU tracking & nursing MAR administration",
+          "Daily ledger, OPD fee billing & dues reconciliation",
+          "Offline demo mode (localStorage) + Cloud sync via Firebase"
         ],
-        gallery: [
-          { label: "Dashboard", kind: "detaillo-dashboard" },
-          { label: "Bills list", kind: "detaillo-bills" },
-          { label: "Reports & Excel", kind: "detaillo-reports" },
-          { label: "Sign in", kind: "detaillo-login" },
+        screenshots: [
+          {
+            src: "/screenshots/brave_screenshot_devchospital.web.app.png",
+            title: "OPD Dashboard & Patient Flow",
+            caption: "Real-time footfall, live OPD queue, weight-based rapid dosing calculator, and dues summary."
+          },
+          {
+            src: "/screenshots/brave_screenshot_devchospital.web.app (1).png",
+            title: "Prescription (Rx) & Consultation",
+            caption: "Pediatric drug formulation picker, vitals, SOS guidelines, and emergency alert footer."
+          },
+          {
+            src: "/screenshots/brave_screenshot_devchospital.web.app (2).png",
+            title: "Vaccination Due Reminders",
+            caption: "IAP/Government schedule tracking with preformatted WhatsApp reminder messages for parents."
+          },
+          {
+            src: "/screenshots/brave_screenshot_devchospital.web.app (3).png",
+            title: "WHO Growth Percentile Curves",
+            caption: "Interactive SD curve comparison for weight-for-age, height-for-age, and head circumference."
+          },
+          {
+            src: "/screenshots/brave_screenshot_devchospital.web.app (4).png",
+            title: "Daily Collection & Cash Ledger",
+            caption: "Real-time drawer balance, digital UPI tracking, pending dues, and shift closure audit."
+          }
         ],
+        tags: [
+          "Vanilla JS",
+          "Firebase Hosting & Firestore",
+          "Pediatric EMR",
+          "Responsive PWA",
+          "WhatsApp Cloud Link",
+          "Print Stylesheets"
+        ],
+        link: "#",
+        linkText: "Hospital Portal"
       },
       {
-        title: "Prime Vision",
-        subtitle: "Eye Hospital Reading App",
-        status: "Delivered · Freelance",
-        text:
-          "A patient registration and diagnostic reading tool for an eye hospital. It records vision, refraction and glasses data across patient profiles and keeps the workflow simple and digital.",
-        tags: ["Android", "iOS", "Web App", "Eye Care"],
-        featureList: [
-          "Patient registration",
-          "Vision, refraction and glasses entry",
-          "Patient list and record search",
-          "Backup / restore workflow",
+        id: "detaillo",
+        title: "Detaillo",
+        subtitle: "Auto Detailing & Workshop Management",
+        status: "Delivered",
+        desc: "End-to-end studio workflow manager for automotive detailing centers—covering customer intake, job card assignment, multi-stage coating inspections, and invoice reconciliation.",
+        features: [
+          "Digital vehicle intake inspection checklist",
+          "Job progress tracking and technician assignment",
+          "Automated pickup/delivery alerts for customers",
+          "Secure billing and vehicle service logs"
         ],
-        gallery: [
-          { label: "Patient registration", kind: "prime-vision-patient" },
-          { label: "Patient list", kind: "prime-vision-list" },
-          { label: "Backup screen", kind: "prime-vision-backup" },
+        screenshots: [
+          {
+            src: "/screenshots/brave_screenshot_detailloautodetailingstudio.web.app.png",
+            title: "Workshop Job Board & Invoicing",
+            caption: "Vehicle intake checklist, detailing progress status, and billing audit."
+          },
+          {
+            src: "/screenshots/brave_screenshot_detailloautodetailingstudio.web.app (1).png",
+            title: "Customer Intake & Job Cards",
+            caption: "Digital vehicle intake inspection and job card assignment workflow."
+          },
+          {
+            src: "/screenshots/brave_screenshot_detailloautodetailingstudio.web.app (2).png",
+            title: "Coating Inspection Stages",
+            caption: "Multi-stage coating inspection tracking with status indicators."
+          },
+          {
+            src: "/screenshots/brave_screenshot_detailloautodetailingstudio.web.app (3).png",
+            title: "Billing & Service Logs",
+            caption: "Secure billing records and vehicle service history audit."
+          },
+          {
+            src: "/screenshots/brave_screenshot_detailloautodetailingstudio.web.app (4).png",
+            title: "Customer Alerts & Notifications",
+            caption: "Automated pickup/delivery alerts for customers."
+          }
         ],
+        tags: ["PWA", "HTML5/CSS3", "JavaScript", "Cloud Database"],
+        link: "#",
+        linkText: "View Case Study"
       },
-    ],
+      {
+        id: "prime-vision",
+        title: "Prime Vision",
+        subtitle: "Optometry & Optical Practice Management",
+        status: "Delivered",
+        desc: "Comprehensive clinic and store management system handling patient eye examinations, prescription history, frame/lens inventory tracking, and billing.",
+        features: [
+          "Comprehensive vision exam records & refractive index tracking",
+          "Frame & optical lens stock management",
+          "Patient history with auto-suggested follow-ups",
+          "GST invoice generation & sales analytics"
+        ],
+        screenshots: [],
+        tags: ["Web App", "JavaScript", "Firebase", "Inventory Management"],
+        link: "#",
+        linkText: "View Case Study"
+      }
+    ]
   },
 
   reading: {
     label: "Reading List",
-    title: "Books & references",
-    intro:
-      "A running list of recent reads, current books and the ideas that are shaping my thinking right now.",
+    title: "Books & Literature",
+    intro: "Books shaping my perspective on physics, systems engineering, philosophy, and computation.",
+    colorClass: "panel--red",
     items: [
       {
         title: "The Quantum Divide",
-        subtitle: "C. Gerry & K. Bruno",
-        status: "Currently reading",
-        text:
-          "A deep dive into quantum ideas and how they connect to the way we reason about reality, systems and the unknown.",
-        tags: ["Quantum", "Science", "Current read"],
-      },
-      {
-        title: "Dune",
-        subtitle: "Frank Herbert",
-        status: "Recently finished",
-        text:
-          "A classic work of worldbuilding, political strategy and the tension between power, ecology and human ambition.",
-        tags: ["Classic", "Sci-Fi", "Worldbuilding"],
-      },
-      {
-        title: "Thinking, Fast and Slow",
-        subtitle: "Daniel Kahneman",
-        status: "Recent read",
-        text:
-          "A powerful exploration of intuition, bias, judgment and the mental systems behind decision-making.",
-        tags: ["Psychology", "Decision making"],
-      },
-      {
-        title: "The Black Swan",
-        subtitle: "Nassim Nicholas Taleb",
-        status: "Recent read",
-        text:
-          "A sharp look at uncertainty, rare events and how we often misread the true shape of risk.",
-        tags: ["Probability", "Risk"],
-      },
-      {
-        title: "Deep Work",
-        subtitle: "Cal Newport",
-        status: "Recent read",
-        text:
-          "A practical case for building deep focus in a world designed to keep us distracted.",
-        tags: ["Productivity", "Focus"],
-      },
-      {
-        title: "Atomic Habits",
-        subtitle: "James Clear",
-        status: "Recent read",
-        text:
-          "A clear framework for daily systems, small wins and turning good intentions into repeatable behavior.",
-        tags: ["Habits", "Growth"],
-      },
-      {
-        title: "The Lean Startup",
-        subtitle: "Eric Ries",
-        status: "Recent read",
-        text:
-          "A practical guide to experimentation, learning cycles and reducing waste while building products.",
-        tags: ["Startup", "Product"],
-      },
-      {
-        title: "Clean Code",
-        subtitle: "Robert C. Martin",
-        status: "Recent read",
-        text:
-          "A durable reminder that readability, discipline and simplicity are the real foundations of maintainable software.",
-        tags: ["Software", "Craft"],
-      },
-      {
-        title: "The Pragmatic Programmer",
-        subtitle: "Andrew Hunt & David Thomas",
-        status: "Recent read",
-        text:
-          "A classic engineering book on clarity, automation, craftsmanship and building for change.",
-        tags: ["Engineering", "Practice"],
-      },
-      {
-        title: "The Psychology of Money",
-        subtitle: "Morgan Housel",
-        status: "Recent read",
-        text:
-          "A thoughtful look at how behaviour, uncertainty and time shape financial decisions far more than formulas do.",
-        tags: ["Finance", "Behavior"],
-      },
-      {
-        title: "The New New Thing",
-        subtitle: "Michael Lewis",
-        status: "Recent read",
-        text:
-          "An engaging look at the personalities, bets and risk culture behind the internet boom and the people who shaped it.",
-        tags: ["Business", "Technology"],
-      },
-      {
-        title: "Zero to One",
-        subtitle: "Peter Thiel",
-        status: "Recent read",
-        text:
-          "A sharp and contrarian take on monopoly, technology and what creates real, durable value.",
-        tags: ["Startups", "Strategy"],
-      },
-      {
-        title: "The Power of Habit",
-        subtitle: "Charles Duhigg",
-        status: "Recent read",
-        text:
-          "A fascinating explanation of habit loops, routines and how systems shape outcomes in life and business.",
-        tags: ["Behavior", "Systems"],
-      },
-      {
-        title: "The Alchemist",
-        subtitle: "Paulo Coelho",
-        status: "Recent read",
-        text:
-          "A reminder that personal growth is often a matter of learning to listen to your own direction and keep moving.",
-        tags: ["Reflection", "Philosophy"],
-      },
-      {
-        title: "The Undoing Project",
-        subtitle: "Michael Lewis",
-        status: "Recent read",
-        text:
-          "A narrative about human judgment, probability and the people who changed how we think about decision science.",
-        tags: ["Psychology", "Science"],
-      },
-      {
-        title: "Sapiens",
-        subtitle: "Yuval Noah Harari",
-        status: "Recent read",
-        text:
-          "A sweeping account of how humankind built ideas, institutions and systems that transformed history.",
-        tags: ["History", "Humanity"],
-      },
-      {
-        title: "The Hard Thing About Hard Things",
-        subtitle: "Ben Horowitz",
-        status: "Recent read",
-        text:
-          "A practical and honest look at leadership, uncertainty and building under pressure.",
-        tags: ["Leadership", "Startup"],
-      },
-    ],
+        subtitle: "Christopher C. Gerry & Kimberly M. Bruno",
+        status: "Reading",
+        desc: "Exploring quantum optical phenomena, wave-particle duality, and the foundations of quantum mechanics.",
+        tags: ["Physics", "Quantum Optics", "Foundations"]
+      }
+    ]
   },
 
   ailab: {
-    label: "AI Lab",
-    title: "Current Studies / Artificial Intelligence",
-    intro:
-      "Current studies in AI, experiments, learning resources and the systems I'm exploring across machine learning, generative AI and agentic workflows.",
+    label: "AI Lab & Research",
+    title: "Artificial Intelligence",
+    intro: "Hands-on explorations into large language models, agent workflows, and practical machine intelligence.",
+    colorClass: "panel--green",
     items: [
       {
-        title: "Why AI",
-        subtitle: "Current Studies / Artificial Intelligence",
-        status: "Focus area",
-        text:
-          "AI is becoming a force multiplier for software, design, operations and decision-making. I am learning where it can help me move faster, think more clearly and build better tools.",
-        tags: ["AI foundations", "Systems thinking"],
-      },
-      {
-        title: "Gesturize",
-        subtitle: "AI interaction experiments",
-        status: "Exploring",
-        text:
-          "Exploring human-centered interfaces and multimodal experiences where people interact with systems through gesture, movement and intent rather than only clicks and forms.",
-        tags: ["Interaction design", "HCI"],
-      },
-      {
-        title: "Facebook × Udacity Scholarship",
-        subtitle: "AI learning track",
-        status: "In progress",
-        text:
-          "A structured learning path focused on practical AI and machine learning foundations, with a strong emphasis on building an understanding by doing.",
-        tags: ["Scholarship", "Learning path"],
-      },
-      {
-        title: "Sentdex AI series",
-        subtitle: "Practical ML and AI learning",
-        status: "Watching",
-        text:
-          "Working through hands-on tutorials, code-first explanations and applied machine learning examples to build intuition for the real-world workflow.",
-        tags: ["Python", "ML tutorials"],
-      },
-      {
-        title: "Stanford AI course",
-        subtitle: "Foundations of artificial intelligence",
-        status: "Studying",
-        text:
-          "Following the Stanford curriculum to strengthen the theoretical base behind search, reasoning, planning, and probabilistic thinking in AI.",
-        tags: ["Theory", "AI course"],
-      },
-      {
-        title: "Deep Learning",
-        subtitle: "Ian Goodfellow, Yoshua Bengio & Aaron Courville",
-        status: "Book",
-        text:
-          "One of the core references for understanding the architecture, training dynamics and foundations behind modern deep learning systems.",
-        tags: ["Deep Learning", "AI book"],
-        link: "https://www.deeplearningbook.org/",
-      },
-      {
-        title: "Hands-On Machine Learning",
-        subtitle: "Aurélien Géron",
-        status: "Book",
-        text:
-          "A highly practical guide to machine learning pipelines, modelling choices and building working systems with real data.",
-        tags: ["ML", "Practical"],
-        link: "https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/",
-      },
-      {
-        title: "The Hundred-Page Machine Learning Book",
-        subtitle: "Andriy Burkov",
-        status: "Book",
-        text:
-          "A compact reference for the ideas, terminology and mental models behind modern machine learning at a useful level of depth.",
-        tags: ["Reference", "ML"],
-        link: "https://themlbook.com/",
-      },
-      {
-        title: "Machine Learning with PyTorch and Scikit-Learn",
-        subtitle: "Sebastian Raschka, Yuxi Liu & Vahid Mirjalili",
-        status: "Book",
-        text:
-          "A hands-on book that ties together production-minded ML workflows, tooling and model development in Python.",
-        tags: ["PyTorch", "Python"],
-        link: "https://www.packtpub.com/product/machine-learning-with-pytorch-and-scikit-learn/9781801819312",
-      },
-      {
-        title: "AI Revolution, Part 1",
-        subtitle: "Tim Urban",
-        status: "Post",
-        text:
-          "A thoughtful, accessible look at the rise of AI and the bigger social and technological changes it suggests.",
-        tags: ["AI thinking", "Long read"],
-        link: "https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html",
-      },
-      {
-        title: "AI Revolution, Part 2",
-        subtitle: "Tim Urban",
-        status: "Post",
-        text:
-          "A follow-up that goes deeper into the practical implications of AI, its pace and the changing expectations it creates.",
-        tags: ["AI thinking", "Long read"],
-        link: "https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-2.html",
-      },
-    ],
+        title: "Autonomous Agent Architectures",
+        subtitle: "Exploratory Project",
+        status: "Active",
+        desc: "Prototyping multi-agent coordination pipelines using structured tool calls and persistent memory layers.",
+        tags: ["LLMs", "Agentic AI", "Function Calling"]
+      }
+    ]
   },
 
   design: {
-    label: "Design & Experiments",
-    title: "UI & UX work",
-    intro: "UI/UX work, prototypes, and creative ideas.",
+    label: "Design Work",
+    title: "UI & UX Design",
+    intro: "Crafting purposeful, clean interfaces that make complex domain workflows effortless.",
+    colorClass: "panel--dark",
     items: [
       {
-        title: "Detaillo billing UI",
-        subtitle: "Dark dashboard with a red accent",
-        status: "Shipped",
-        text: "A dark, high-contrast dashboard for daily billing: today's totals, recent bills, rate card and reports.",
-        tags: ["Dashboard", "Dark UI"],
-      },
-      {
-        title: "Studio Z portfolio",
-        subtitle: "Card-based personal site",
-        status: "Live",
-        text: "A bright card layout with layered shapes, soft motion and one idea per card.",
-        tags: ["Portfolio", "Motion"],
-      },
-    ],
+        title: "Clinical & Enterprise Dashboards",
+        subtitle: "Design System & Micro-interactions",
+        status: "Case Study",
+        desc: "Creating distraction-free, high-density layouts for mission-critical medical and enterprise desktop environments.",
+        tags: ["Figma", "Design Systems", "UX Research", "Accessibility"]
+      }
+    ]
   },
 
   learning: {
-    label: "Currently Learning",
-    title: "What I'm studying",
-    intro: "Technologies, courses, and new skills I'm developing.",
+    label: "Continuous Learning",
+    title: "Currently Learning",
+    intro: "New tools, frameworks, and engineering concepts currently on my radar.",
+    colorClass: "panel--amber",
     items: [
       {
-        title: "Generative AI",
-        subtitle: "Prompting, models and product patterns",
-        status: "Learning",
-        text: "Prompting, retrieval and building real features on top of language models.",
-        tags: ["GenAI"],
-      },
-      {
-        title: "Agentic AI",
-        subtitle: "Planning, tools and workflow design",
-        status: "Learning",
-        text: "How agents plan, call tools and recover from mistakes while working across steps.",
-        tags: ["Agents"],
-      },
-      {
-        title: "Software engineering craft",
-        subtitle: "Architecture, testing and delivery",
-        status: "Ongoing",
-        text: "Cleaner architecture, testing and shipping across web and mobile.",
-        tags: ["Android", "iOS", "Web"],
-      },
-    ],
+        title: "Generative AI & Agentic Systems",
+        subtitle: "Deep Learning & Applied AI",
+        status: "In Progress",
+        desc: "Studying retrieval-augmented generation (RAG) fine-tuning, reasoning topologies, and multimodal inference pipelines.",
+        tags: ["GenAI", "Embeddings", "Vector Databases", "Prompt Engineering"]
+      }
+    ]
   },
 
   notes: {
-    label: "Notes & Insights",
-    title: "Lessons learned",
-    intro: "Technical notes, useful discoveries, and lessons learned.",
+    label: "Technical Notes",
+    title: "Lessons Learned",
+    intro: "Field notes, performance optimizations, and patterns discovered while building software.",
+    colorClass: "panel--violet",
     items: [
       {
-        title: "Designing for clarity",
-        subtitle: "Useful UI principle",
-        status: "Draft",
-        text: "Before adding any feature, reduce the interface to what people need to do in the next fifteen seconds and remove everything else.",
-        tags: ["UX", "Design"],
-      },
-    ],
-  },
+        title: "Zero-Build Web Architectures",
+        subtitle: "Engineering Note",
+        status: "Published",
+        desc: "How plain HTML5, clean modern CSS, and modular vanilla JavaScript can deliver sub-50ms render speeds without bundle overhead.",
+        tags: ["Web Performance", "Vanilla JS", "Architecture"]
+      }
+    ]
+  }
 };

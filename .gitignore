@@ -1,0 +1,24 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Firebase hosting cache
+.firebase/*.cache
+.firebase/hosting.*cache
+
+# Dependencies
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Build / dist
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
